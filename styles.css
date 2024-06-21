@@ -4,10 +4,12 @@
 html {
     scroll-behavior: smooth;
 }
-*{
-    font-family: 'Cairo', sans-serif !important ;
+
+* {
+    font-family: 'Cairo', sans-serif !important;
 
 }
+
 .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -52,6 +54,8 @@ body {
 }
 
 header {
+    position: relative;
+    z-index: 1000;
     width: 100%;
     height: 80px;
     background: #22242a;
@@ -60,8 +64,6 @@ header {
     justify-content: space-between;
     padding: 0 20px;
     margin: 0;
-
-    font-family: "futura md bt";
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
@@ -102,18 +104,6 @@ nav ul li a.active {
 }
 
 @media only screen and (max-width: 1320px) {
-    header {
-        padding: 0 50px;
-    }
-}
-
-@media only screen and (max-width: 1100px) {
-    header {
-        padding: 0 50px;
-    }
-}
-
-@media only screen and (max-width: 900px) {
     .hamburger {
         display: block;
         cursor: pointer;
@@ -164,12 +154,14 @@ nav ul li a.active {
 .hero {
     background-color: #22242a;
     margin-top: 80px;
-    font-family: 'Cairo', sans-serif ;
+    font-family: 'Cairo', sans-serif;
 }
+
 .hero .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 35px;
 }
 
 .hero-content {
@@ -180,14 +172,14 @@ nav ul li a.active {
 }
 
 .hero-content p {
-    font-family: 'Cairo', sans-serif ;
+    font-family: 'Cairo', sans-serif;
     color: #fefefe;
     font-size: 20px;
     opacity: 0.8;
 }
 
 .hero-content h1 {
-    font-family: 'Cairo', sans-serif ;
+    font-family: 'Cairo', sans-serif;
     font-size: 60px;
     margin-bottom: 1rem;
     font-weight: semi-bold;
@@ -196,13 +188,10 @@ nav ul li a.active {
 
 .trusted-partner {
     display: flex;
-    font-family: 'Cairo', sans-serif ;
-}
-
-
-
-.hero-content img {
-    padding-left: 30px;
+    font-family: 'Cairo', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
 }
 
 .buttons {
@@ -215,40 +204,46 @@ nav ul li a.active {
     background-color: #E84A2F;
     color: white;
     border: none;
-    font-family: 'Cairo', sans-serif ;
+    font-family: 'Cairo', sans-serif;
     padding: 15px 35px;
     font-size: 16px;
-    border-radius: 77px  ;
+    border-radius: 77px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 1.4rem;
 }
-.buttons button:hover{
+
+.buttons button:hover {
     opacity: .8;
 }
 
+@media (max-width: 991px) {
+
+    .hero .hero-image img {
+        display: none;
+    }
+}
 
 @media (max-width: 768px) {
     .hero .container {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        
+
     }
+
     .hero-content h1 {
         font-size: 34px;
     }
+
     .hero-content h2 {
         font-size: 15px;
     }
-    
+
     .hero-content p {
         font-size: 15px;
     }
-    
-    .hero .hero-image img {
-        display: none;
-    }
+
 
     .hero-image img {
         padding-right: 0;
@@ -259,17 +254,23 @@ nav ul li a.active {
 
 /*code of about section*/
 .about-section {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
+    padding-top: 50px;
+    margin-top: 80px;
     width: 100%;
-    border-radius: 100px;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 80px 0 87px 0;
-    margin-top: 20px;
+    background: #fff;
+    border-radius: 100px ;
     /* Add top margin to ensure space between sections */
 }
+
+.about-section .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    /* Space between elements */
+}
+
 .about-section .text {
     text-align: center;
 }
@@ -413,8 +414,8 @@ nav ul li a.active {
 }
 
 .lavado-info p {
-    max-width: 800px;
-    text-align: left;
+    max-width: 1000px;
+    text-align: center;
     /* Left align text */
     color: #000000;
     /* Text color */
@@ -477,11 +478,17 @@ nav ul li a.active {
 }
 
 .story-card {
+    cursor: pointer;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 30%;
+    transition-duration: 0.3s ;
+}
+.story-card:hover {
+
+    transform: scale(1.1);
 }
 
 .story-card h3 {
@@ -595,15 +602,8 @@ nav ul li a.active {
 }
 
 
-
-
-
-
-
-
 /* from here the code of footer started*/
 footer {
-    background-color: #1a1a1a;
     /* Change to match the background */
     color: #ffffff;
     padding: 20px 0;
@@ -611,21 +611,22 @@ footer {
     /* Change font to match the example */
 }
 
-.footer-container {
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+}
+footer .footer-section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    /* Adjust spacing between items */
-    max-width: 1200px;
-    margin: auto;
+    flex-direction: column;
+    gap: 5px;
 }
+.footer-section div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}   
 
-.footer-section {
-    flex: 1;
-    min-width: 200px;
-    margin: 10px 20px;
-    /* Adjust margin for spacing */
-}
 
 .footer-logo {
     width: 150px;
@@ -676,14 +677,13 @@ footer {
     color: #22242a;
 }
 
-.footer-social-link img:hover {
-    transform: scale(1.1);
-}
 
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
+    footer .container {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 30px;
+        text-align: center;
     }
 
     .footer-section {
@@ -694,9 +694,17 @@ footer {
         justify-content: center;
         gap: 20px;
     }
+    
+.footer-logo {
+    margin-left: auto;
+    margin-right: auto;
+}
+    .footer-section div{
 
+        margin-left: auto;
+        margin-right: auto;
+    } 
     .footer-social-link {
         margin: 10px 0;
-        /* Adjust spacing on small screens */
     }
 }
