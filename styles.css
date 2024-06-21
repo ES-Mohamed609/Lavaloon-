@@ -4,19 +4,32 @@
 html {
     scroll-behavior: smooth;
 }
+*{
+    font-family: 'Cairo', sans-serif !important ;
 
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
 @media (min-width: 768px) {
     .container {
         width: 750px;
     }
 }
 
+/* Medium */
 @media (min-width: 992px) {
     .container {
         width: 970px;
     }
 }
 
+/* Large */
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
@@ -148,37 +161,42 @@ nav ul li a.active {
 }
 
 
-
 .hero {
     background-color: #22242a;
-    /* Ensuring hero section matches the body */
+    margin-top: 80px;
+    font-family: 'Cairo', sans-serif ;
+}
+.hero .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 20px;
-    padding-left: 300px;
 }
 
 .hero-content {
-    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     color: #fefefe;
 }
 
 .hero-content p {
-    font-size: 140%;
+    font-family: 'Cairo', sans-serif ;
     color: #fefefe;
+    font-size: 20px;
+    opacity: 0.8;
 }
 
 .hero-content h1 {
-    font-family: 'Cairo';
-    font-size: 3.5rem;
+    font-family: 'Cairo', sans-serif ;
+    font-size: 60px;
     margin-bottom: 1rem;
-    font-weight: 600;
+    font-weight: semi-bold;
     color: #fefefe;
 }
 
 .trusted-partner {
     display: flex;
+    font-family: 'Cairo', sans-serif ;
 }
 
 
@@ -189,39 +207,47 @@ nav ul li a.active {
 
 .buttons {
     margin-top: 20px;
+    display: flex;
+    gap: 10px;
 }
 
 .buttons button {
     background-color: #E84A2F;
     color: white;
     border: none;
+    font-family: 'Cairo', sans-serif ;
     padding: 15px 35px;
     font-size: 16px;
-    border-radius: 77px 77px 77px 77px;
-    /* Rounded corners */
-    margin: 0 10px;
-    /* Spacing between buttons */
+    border-radius: 77px  ;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-size: 1.4rem;
 }
-
-.hero-image img {
-    padding-right: 300px;
+.buttons button:hover{
+    opacity: .8;
 }
 
+
 @media (max-width: 768px) {
-    .hero {
+    .hero .container {
         flex-direction: column;
         align-items: center;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .hero-content,
-    .hero-image {
-        max-width: 100%;
         text-align: center;
+        
+    }
+    .hero-content h1 {
+        font-size: 34px;
+    }
+    .hero-content h2 {
+        font-size: 15px;
+    }
+    
+    .hero-content p {
+        font-size: 15px;
+    }
+    
+    .hero .hero-image img {
+        display: none;
     }
 
     .hero-image img {
@@ -243,6 +269,9 @@ nav ul li a.active {
     padding: 80px 0 87px 0;
     margin-top: 20px;
     /* Add top margin to ensure space between sections */
+}
+.about-section .text {
+    text-align: center;
 }
 
 .about-section h1 {
